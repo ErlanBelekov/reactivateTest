@@ -1,14 +1,14 @@
+
+```
 ### Deploy to Heroku
-<h3>Requirements</h3>
+
+#Requirements
+
 Git
 Heroku CLI installed
-<h3>Instructions</h3>
-```
-Clone the project
-
+#Instructions
 heroku create
 git push heroku master
-
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
