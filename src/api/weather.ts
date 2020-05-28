@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { API } from '../constants';
+import { API, API_KEY } from '../constants';
 import { UserLocation } from '../App'
 
 export type Weather = {
@@ -11,7 +11,7 @@ export type Weather = {
 }
 
 export const getWeatherForLocation = async (location: UserLocation): Promise<Weather> => {
-  const URL = `${API}weather?lat=${location.latt}&lon=${location.long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+  const URL = `${API}weather?lat=${location.latt}&lon=${location.long}&appid=${API_KEY}&units=metric`
 
   return axios.get(URL)
     .then((response: AxiosResponse) => {
@@ -26,7 +26,7 @@ export const getWeatherForLocation = async (location: UserLocation): Promise<Wea
 }
 
 export const getWeatherForCity = async (cityName: string): Promise<Weather> => {
-  const URL = `${API}weather?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+  const URL = `${API}weather?q=${cityName}&appid=${API_KEY}&units=metric`
 
   return axios.get(URL)
     .then((response: AxiosResponse) => {
