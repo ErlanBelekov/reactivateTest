@@ -109,7 +109,8 @@ class App extends Component<{}, AppState> {
     const weatherIcon = this.getWeatherIcon()
     const {
       weatherCondition: {
-        description
+        description,
+        degrees
       },
       loading,
       errorMsg
@@ -140,7 +141,10 @@ class App extends Component<{}, AppState> {
                     (
                       <div className="weatherResults">
                         <img src={weatherIcon} className="weatherIcon" alt="Weather Icon" />
-                        <p className="resultsLabel">It's {description}</p>
+                        <div className="weatherStats">
+                          <p className="weatherDegrees">{degrees > 0 ? '+' : '-'}{degrees}</p>
+                          <p className="weatherDescription">It's {description}</p>
+                        </div>
                       </div>
                     )
                 }
