@@ -1,3 +1,16 @@
+### Deploy to Heroku
+<h3>Requirements</h3>
+Git
+Heroku CLI installed
+<h3>Instructions</h3>
+```
+Clone the project
+
+heroku create
+git push heroku master
+
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
