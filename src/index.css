@@ -1,3 +1,9 @@
+/* Add Jost as font to use later */
+@font-face {
+  font-family: 'Jost';
+  src: local('Jost'), url(./fonts/static/Jost-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,70 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1, h2, h3, h4, h5, button, p {
+  font-family: Jost;
+}
+
+.pageContainer {
+  height: 100vh;
+  width: 100vw;
+  transition: background-color 120ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBarContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchInput {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 6px 16px;
+  background-color: white;
+  font-size: 18px;
+}
+
+.searchButton {
+  border-radius: 5px;
+  border: 1px solid white;
+  margin-top: 10px;
+  padding: 6px 16px;
+  background-color: white;
+  font-size: 18px;
+}
+
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+}
+
+@media (max-width: 700px) {
+  .pageContent {
+    width: 80vw;
+  }
+}
+
+.weatherIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.weatherResults {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.resultsLabel {
+  font-size: 22px;
+  font-weight: bold;
 }
