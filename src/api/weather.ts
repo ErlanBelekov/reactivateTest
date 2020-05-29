@@ -18,7 +18,7 @@ export const getWeatherForLocation = async (location: UserLocation): Promise<Wea
       const { data } = response;
       const weather: Weather = {
         ...data.weather[0],
-        degrees: data.main.temp
+        degrees: Math.floor(data.main.temp)
       }
       return weather;
     })
@@ -33,7 +33,7 @@ export const getWeatherForCity = async (cityName: string): Promise<Weather> => {
       const { data } = response;
       const weather: Weather = {
         ...data.weather[0],
-        degrees: data.main.temp
+        degrees: Math.floor(data.main.temp)
       }
       return weather;
     })
