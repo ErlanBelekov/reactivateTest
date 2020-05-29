@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
+import Slider from '@material-ui/core/Slider';
 import { getWeatherForLocation, Weather, getWeatherForCity } from './api/weather';
 import { BackgroundColors, StaticContentAPI } from './constants';
 
@@ -104,6 +105,17 @@ class App extends Component<{}, AppState> {
     return `${StaticContentAPI}/img/wn/${icon}@2x.png`
   }
 
+  onSliderChange = (event: any, newValue: number | number[]) => {
+    if (typeof newValue === 'number') {
+      this.setState((prevState: AppState) => ({
+        weatherCondition: {
+          ...prevState.weatherCondition,
+          degrees: newValue
+        }
+      }))
+    }
+  }
+
   render(): JSX.Element {
     const backgroundColor = this.getBackground()
     const weatherIcon = this.getWeatherIcon()
@@ -139,13 +151,16 @@ class App extends Component<{}, AppState> {
                 {
                   errorMsg ? <h1 className="errorLabel">{errorMsg}</h1> :
                     (
-                      <div className="weatherResults">
-                        <img src={weatherIcon} className="weatherIcon" alt="Weather Icon" />
-                        <div className="weatherStats">
-                          <p className="weatherDegrees">{degrees > 0 ? '+' : '-'}{degrees}</p>
-                          <p className="weatherDescription">It's {description}</p>
+                      <>
+                        <div className="weatherResults">
+                          <img src={weatherIcon} className="weatherIcon" alt="Weather Icon" />
+                          <div className="weatherStats">
+                            <p className="weatherDegrees">{degrees > 0 ? '+' : '-'}{degrees}</p>
+                            <p className="weatherDescription">It's {description}</p>
+                          </div>
                         </div>
-                      </div>
+                        <Slider className="weatherSlider" min={-50} max={50} value={degrees} onChange={this.onSliderChange} aria-labelledby="continuous-slider" />
+                      </>
                     )
                 }
               </div>
