@@ -121,7 +121,7 @@ class App extends Component<{}, AppState> {
       return BackgroundColors.snow;
     } else if (degrees > -10 && degrees <= 10) {
       return BackgroundColors.cool;
-    } else if (degrees > 10 && degrees < 30) {
+    } else if (degrees > 10 && degrees <= 30) {
       return BackgroundColors.warm;
     } else if (degrees > 30) {
       return BackgroundColors.hot;
