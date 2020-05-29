@@ -1,12 +1,15 @@
 
+<h3>Deploy to Heroku</h3>
+<h4>Requirements</h4>
+
 ```
-### Deploy to Heroku
-
-#Requirements
-
 Git
 Heroku CLI installed
-#Instructions
+```
+
+<h4>Instructions</h4>
+
+```
 heroku create
 git push heroku master
 ```
