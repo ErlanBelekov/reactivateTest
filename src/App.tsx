@@ -155,7 +155,7 @@ class App extends Component<{}, AppState> {
                         <div className="weatherResults">
                           <img src={weatherIcon} className="weatherIcon" alt="Weather Icon" />
                           <div className="weatherStats">
-                            <p className="weatherDegrees">{degrees > 0 ? '+' : '-'}{degrees}</p>
+                            <p className="weatherDegrees">{degrees > 0 ? '+' : degrees === 0 ? '' : '-'}{degrees}°C</p>
                             <p className="weatherDescription">It's {description}</p>
                           </div>
                         </div>
