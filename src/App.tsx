@@ -40,7 +40,7 @@ class App extends Component<{}, AppState> {
   };
 
   // Get weather data for users current location
-  async componentDidMount() {
+  componentDidMount() {
     // request users location
     navigator.geolocation.getCurrentPosition(
       this.onLocationGet,
